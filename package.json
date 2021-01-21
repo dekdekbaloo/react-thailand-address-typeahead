@@ -1,5 +1,5 @@
 {
-  "name": "react-thailand-address-typeahead",
+  "name": "@dekdekbaloo/react-thailand-address-typeahead",
   "version": "1.0.1-beta.0",
   "main": "dist/index.js",
   "repository": {
@@ -15,7 +15,7 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "export": "build-storybook -c .storybook -o .out"
   },
-  "author": "Rungsikorn Rungsikavarnich <rungsikorn@me.com>",
+  "author": "Jessada Trirongkit <jessada.trirongkit@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
