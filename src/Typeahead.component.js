@@ -33,6 +33,7 @@ const Typeahead: React.Component<TypeaheadInputType> = compose(
       onFocus={() => props.setOpen(true)}
       type="text" value={props.value}
       onChange={props.onChange}
+      autoComplete="off"
     />
     { props.options.length && props.value.length ? <input
       onChange={() => null}
