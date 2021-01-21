@@ -43,9 +43,17 @@ const preprocess = (data) => {
   });
   return expanded;
 };
-const DB = new JQL(preprocess(require('../data.json')));
+
+let DB;
+const init = (data: object) => {
+  DB = new JQL(preprocess(data));
+};
 
 const resolveResultbyField = (type: string, searchStr: string) => {
+  if (!DB) {
+    throw new Error('Address db has not been initialized. Call `init(data)` from your `db.json` file.');
+  }
+
   let possibles = [];
   try {
     possibles = DB.select('*').where(type)
@@ -58,5 +66,6 @@ const resolveResultbyField = (type: string, searchStr: string) => {
   return possibles;
 };
 
+exports.init = init;
 exports.resolveResultbyField = resolveResultbyField;
 exports.fieldsEnum = fieldsEnum;

@@ -59,4 +59,7 @@ class AddressForm extends React.Component {
   }
 }
 
+
+export { init } from './finder';
+
 export default AddressForm;
