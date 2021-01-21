@@ -21,7 +21,7 @@ This project is forked from
 import AddressFormTypeahead, { init } from 'react-thailand-address-typeahead';
 
 // Before rendering
-init(requrie('path/to/your/address.json'))
+init(require('path/to/your/address.json'))
 
 export default () => (
   <AddressFormTypeahead
