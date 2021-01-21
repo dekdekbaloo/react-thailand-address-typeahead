@@ -25,6 +25,7 @@ const AddressTypeaheadComponent = (props: AddressInputType) => {
   }
   return (
     <Typeahead
+      id={fieldType}
       displayOption={props.renderResult}
       filterOption={fieldType}
       options={options}
@@ -50,7 +51,7 @@ const AddressTypeahead: Component<AddressInputType> = compose(
   })),
   defaultProps(({
     renderResult: data => (
-      <span>{`${data.d} » ${data.a} » ${data.p} » `}{data.z || <li>{'ไม่มีรหัสไปรษณีย์'}</li>}</span>
+      <span>{`${data.district} » ${data.amphoe} » ${data.province} » `}{data.zipcode || <li>{'ไม่มีรหัสไปรษณีย์'}</li>}</span>
     ),
     value: '',
   })),

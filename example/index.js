@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import { withState } from 'recompose';
-import AddressForm from '../src/index';
+import AddressForm, { init } from '../src/index';
 
 import '../src/styles.css';
+
+init(require('../address.json'));
 
 storiesOf('Component', module)
   .add('montage', () => (

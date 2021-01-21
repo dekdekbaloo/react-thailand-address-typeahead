@@ -10,6 +10,7 @@ type AddressFormInputPropType = {
         p: string;
         z: string;
     };
+    className?: string;
     onAddressSelected: (addresObject) => void;
     renderResult: (data) => React.Component;
 }
@@ -28,20 +29,20 @@ class AddressForm extends React.Component {
   props: AddressFormInputPropType;
   render() {
     const { addressObj } = this.state;
-    return (<div>
+    return (<div className={this.props.className}>
       {
         Object.keys(fieldsEnum).map((key) => {
           let name;
           switch (fieldsEnum[key]) {
-            case 'd': name = 'ตำบล'; break;
-            case 'a': name = 'อำเภอ'; break;
-            case 'p': name = 'จังหวัด'; break;
-            case 'z': name = 'รหัสไปรษณีย์'; break;
+            case 'district': name = 'ตำบล'; break;
+            case 'amphoe': name = 'อำเภอ'; break;
+            case 'province': name = 'จังหวัด'; break;
+            case 'zipcode': name = 'รหัสไปรษณีย์'; break;
             default: name = ''; break;
           }
           return (
             <div key={key} className="typeahead-address-container">
-              <label className="typeahead-address-label" htmlFor="district">{name}</label>
+              <label className="typeahead-address-label" htmlFor={fieldsEnum[key]}>{name}</label>
               <AddressTypeahead
                 renderResult={this.props.renderResult}
                 onOptionSelected={(result) => {

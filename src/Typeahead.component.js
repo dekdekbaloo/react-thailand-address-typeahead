@@ -4,6 +4,7 @@ import { defaultProps, withState, compose } from 'recompose';
 
 
 type TypeaheadInputType = {
+    id: string;
     displayOption: () => any;
     maxVisible: number;
     value: string;
@@ -27,6 +28,7 @@ const Typeahead: React.Component<TypeaheadInputType> = compose(
 )((props: TypeaheadInputType) => (
   <div className="typeahead typeahead-input-wrap">
     <input
+      id={props.id}
       onBlur={() => setTimeout(() => props.setOpen(false), 400)}
       onFocus={() => props.setOpen(true)}
       type="text" value={props.value}
